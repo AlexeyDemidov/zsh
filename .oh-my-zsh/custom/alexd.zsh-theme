@@ -23,4 +23,8 @@ else
   prefix="$prefix@"
 fi
 
-PROMPT="$prefix"' %{$fg_bold[red]%}➜ %{$fg_bold[green]%} %{$fg[cyan]%}%~ $(~/.rvm/bin/rvm-prompt u) %{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%} % %{$reset_color%}'
+if [[ -r ~/.rvm/bin/rvm-prompt ]]; then
+  rvm_prompt="$(~/.rvm/bin/rvm-prompt u) "
+fi
+
+PROMPT="$prefix"' %{$fg_bold[red]%}➜ %{$fg_bold[green]%} %{$fg[cyan]%}%~ $rvm_prompt%{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%} % %{$reset_color%}'

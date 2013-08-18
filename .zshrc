@@ -9,8 +9,8 @@ ZSH_THEME="alexd"
 
 # Example aliases
 
-source ~/.functions
-source ~/.aliases
+[[ -r ~/.functions ]] && source ~/.functions
+[[ -r ~/.aliases ]] && source ~/.aliases
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -54,6 +54,8 @@ source $ZSH/oh-my-zsh.sh
 # Customize to your needs...
 if [[ -s "$HOME/.rvm/scripts/rvm" ]] ; then source "$HOME/.rvm/scripts/rvm" ; fi
 
-source /Applications/Xcode.app/Contents//Developer/usr/share/git-core/git-completion.bash
-source /Applications/Xcode.app/Contents//Developer/usr/share/git-core/git-prompt.sh
+if [[ -r /Applications/Xcode.app/Contents//Developer/usr/share/git-core/git-completion.bash ]]; then
+  source /Applications/Xcode.app/Contents//Developer/usr/share/git-core/git-completion.bash
+  source /Applications/Xcode.app/Contents//Developer/usr/share/git-core/git-prompt.sh
+fi
 
