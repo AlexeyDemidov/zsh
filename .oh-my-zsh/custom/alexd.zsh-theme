@@ -5,8 +5,22 @@ ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[blue]%}) %{$fg[yellow]%}✗%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[blue]%})"
 
-if [[ -n $SSH_CONNECTION ]]; then
-  PROMPT='%m %{$fg_bold[red]%}➜ %{$fg_bold[green]%} %{$fg[cyan]%}%~ $(~/.rvm/bin/rvm-prompt u) %{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%} % %{$reset_color%}'
+local user=`whoami`
+
+if [[ "$user" != "$DEFAULT_USER" ]]; then
+  if [ $UID -eq 0 ]; then
+    prefix="%{$fg[red]%}$user%{$reset_color%}"
+  else
+    prefix="$user"
+  fi 
 else
-  PROMPT='%{$fg_bold[red]%}➜ %{$fg_bold[green]%} %{$fg[cyan]%}%~ $(~/.rvm/bin/rvm-prompt u) %{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%} % %{$reset_color%}'
+  prefix=""
 fi
+  
+if [[ -n $SSH_CONNECTION ]]; then
+  prefix="$prefix@%m"
+else
+  prefix="$prefix@"
+fi
+
+PROMPT="$prefix"' %{$fg_bold[red]%}➜ %{$fg_bold[green]%} %{$fg[cyan]%}%~ $(~/.rvm/bin/rvm-prompt u) %{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%} % %{$reset_color%}'
