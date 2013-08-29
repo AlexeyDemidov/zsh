@@ -41,8 +41,14 @@ ZSH_THEME="alexd"
 # ZSH_TMUX_AUTOSTART="true"
 # ZSH_TMUX_ITERM2="true"
 
+# export DISABLE_AUTO_TITLE=true
+
 export PROJECT_PATHS="~/code ~/nourish"
 DEFAULT_USER='alexd'
+
+export EDITOR=vim
+export MOSH_TITLE_NOPREFIX=true
+
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
