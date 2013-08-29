@@ -20,7 +20,9 @@ fi
 if [[ -n $SSH_CONNECTION ]]; then
   prefix="$prefix@%m"
 else
-  prefix="$prefix@"
+  if [[ -n $prefix ]]; then
+    prefix="$prefix@"
+  fi
 fi
 
 if [[ -r ~/.rvm/bin/rvm-prompt ]]; then
