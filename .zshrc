@@ -51,8 +51,9 @@ plugins=(profiles alexd git bundler gem ruby zeus vundle tmux tmuxinator rvm cap
 
 source $ZSH/oh-my-zsh.sh
 
-# Customize to your needs...
 if [[ -s "$HOME/.rvm/scripts/rvm" ]] ; then source "$HOME/.rvm/scripts/rvm" ; fi
+
+# Customize to your needs...
 
 if [[ -r /Applications/Xcode.app/Contents//Developer/usr/share/git-core/git-completion.bash ]]; then
   source /Applications/Xcode.app/Contents//Developer/usr/share/git-core/git-completion.bash
