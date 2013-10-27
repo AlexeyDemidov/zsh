@@ -65,3 +65,6 @@ if [[ -r /Applications/Xcode.app/Contents//Developer/usr/share/git-core/git-comp
   source /Applications/Xcode.app/Contents//Developer/usr/share/git-core/git-completion.bash
   source /Applications/Xcode.app/Contents//Developer/usr/share/git-core/git-prompt.sh
 fi
+
+export RUBY_GC_MALLOC_LIMIT=90000000
+export RUBY_FREE_MIN=200000
