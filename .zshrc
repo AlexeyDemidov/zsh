@@ -69,3 +69,12 @@ fi
 export RUBY_HEAP_MIN_SLOTS=2000000
 export RUBY_HEAP_FREE_MIN=20000
 export RUBY_GC_MALLOC_LIMIT=100000000
+
+setopt append_history
+setopt extended_history
+# setopt hist_expire_dups_first
+# setopt hist_ignore_dups # ignore duplication command history list
+setopt hist_ignore_space
+setopt hist_verify
+setopt inc_append_history
+# setopt share_history # share command history data
