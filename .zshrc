@@ -53,7 +53,7 @@ export MOSH_TITLE_NOPREFIX=true
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(profiles alexd git gem ruby zeus vundle tmux tmuxinator rvm capistrano github macports mercurial osx pj rails rake rsync svn themes vagrant )
+plugins=(profiles alexd knife git gem ruby zeus vundle tmux tmuxinator rvm capistrano github macports mercurial osx pj rails rake rsync svn themes vagrant )
 
 source $ZSH/oh-my-zsh.sh
 
